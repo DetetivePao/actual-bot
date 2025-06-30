@@ -428,5 +428,5 @@ def run():
 
     bot.run(token)
     
-if __name__ == "__main__":
+def run_bot():
     run()
