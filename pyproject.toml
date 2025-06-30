@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "steve-bot"
+version = "0.1.0"
+description = "Bot Discord com energia, YouTube, TTS e correção gramatical"
+authors = ["SeuNome"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+discord.py = "^2.3.2"
+yt_dlp = "*"
+flask = "*"
+pyttsx3 = "*"
+language-tool-python = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
