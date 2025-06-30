@@ -11,11 +11,10 @@
   };
 
   postInstall = ''
-    pip install discord.py
     pip install flask
+    pip install discord.py
     pip install yt-dlp
     pip install pyttsx3
     pip install language-tool-python
   '';
 }
-

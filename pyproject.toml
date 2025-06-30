@@ -1,17 +1,10 @@
-[tool.poetry]
-name = "steve-bot"
+[project]
+name = "repl-nix-workspace"
 version = "0.1.0"
-description = "open-source bot or smth wow so cool wow yeah yeah wohoo"
-authors = ["DetetivePao"]
-
-[tool.poetry.dependencies]
-python = "^3.10"
-discord.py = "^2.3.2"
-yt_dlp = "*"
-flask = "*"
-pyttsx3 = "*"
-language-tool-python = "*"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+description = "Add your description here"
+requires-python = ">=3.10"
+dependencies = [
+    "discord-py>=2.5.2",
+    "flask>=3.1.1",
+    "yt-dlp>=2025.6.25",
+]
