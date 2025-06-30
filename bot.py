@@ -4,14 +4,10 @@ from discord.ext import commands
 from discord import FFmpegPCMAudio
 import pathlib
 import os
-import json
-import random
 import yt_dlp as youtube_dl
-import threading as thread
 import asyncio
 from urllib.parse import urlparse
 import sqlite3 as sql
-import pyttsx3 as tts
 
 path = pathlib.Path(__file__)
 os.chdir(path.parent)
@@ -22,12 +18,6 @@ tempFolder = "temp"
 audioFile = os.path.join(tempFolder, "fala.wav")
 chatlog = False
 sleeping = False
-colorPallet = {
-    "RED": '\033[31m',
-    "YELLOW": '\033[33m',
-    "RESET": '\033[0m',
-    "BLUE": '\033[34m'
-}
 
 generalMessages = [
     "não posso fazer o comando de {0} porque estou com {1}% de energia, por favor bote eu para dormir usando o comando !sleep",
@@ -35,63 +25,6 @@ generalMessages = [
 ]
 avaiableLanguages = ["Portuguese","English"]
 
-abreviacoes = {
-    "q": "que",
-    "oq": "o que",
-    "td": "tudo",
-    "vc": "você",
-    "vcs": "vocês",
-    "tb": "também",
-    "blz": "beleza",
-    "pq": "porque",
-    "pq?": "por quê?",
-    "n": "não",
-    "eh": "é",
-    "ta": "tá",
-    "kd": "cadê",
-    "aki": "aqui",
-    "dps": "depois",
-    "hj": "hoje",
-    "amanha": "amanhã",
-    "flw": "falou",
-    "vlw": "valeu",
-    "tmj": "tamo junto",
-    "obg": "obrigado",
-    "pls": "por favor",
-    "pfv": "por favor",
-    "msg": "mensagem",
-    "mt": "muito",
-    "mto": "muito",
-    "mlk": "moleque",
-    "mano": "irmão",
-    "véi": "velho",
-    "velho": "cara",
-    "véio": "velho",
-    "num": "não",
-    "vdd": "verdade",
-    "bjs": "beijos",
-    "bjo": "beijo",
-    "grato": "obrigado",
-    "agr": "agora",
-    "tipo": "como",
-    "ja": "já",
-    "to": "estou",
-    "tô": "estou",
-    "so": "só",
-    "sóh": "só",
-    "cmg": "comigo",
-    "ctz": "certeza",
-    "qq": "qualquer",
-    "qqr": "qualquer",
-    "nao": "não",
-    "tao": "tão",
-    "ehh": "é",
-    "aff": "aff",
-    "pqp": "pelo amor de Deus",
-    "mds": "meu Deus",
-    "crlh": "caramba",
-    "mermão": "meu irmão"
-}
 def is_url(url):
     result = None
     try:
