@@ -8,9 +8,9 @@ app = Flask('')
 def home():
     return "Bot ativo!"
 
-def manter_vivo():
+def keepAlive():
     Thread(target=lambda: app.run(host='0.0.0.0', port=8080)).start()
 
 if __name__ == "__main__":
-    manter_vivo()
+    keepAlive()
     run_bot()
